@@ -74,3 +74,32 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+let arr = ['a', 'b', 'c', 'd', 'e'];
+let arr2 = ['e', 'f', 'g'];
+
+// Slice
+console.log(arr.slice(2));
+console.log(arr.slice(2, 4));
+console.log(arr.slice(-1));
+
+// Create a Shallow Copy of an Array
+console.log(arr.slice());
+console.log([...arr]);
+
+// Splice (mutates the original Array)
+arr.splice(-1);
+console.log(arr);
+
+// Concat
+const letters = arr.concat(arr2);
+console.log(letters);
+
+console.log([...arr, ...arr2]);
+
+// Join
+console.log(letters.join(' - '));
+
+// Reverse (mutates the original Array)
+arr2.reverse();
+console.log(arr2);
