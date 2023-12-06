@@ -201,3 +201,6 @@ const movementsDescriptions = movements.map(
   (mov, i) =>
     `Movement ${i + 1}: ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(mov)}`
 );
+
+// Filter Method
+const deposits = movements.filter(mov => mov > 0);
