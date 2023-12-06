@@ -81,6 +81,12 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
+
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -191,10 +197,6 @@ currenciesUnique.forEach(function (value, _, map) {
 // Maps Method
 const eurToUsd = 1.1;
 
-// const movementsUSD = movements.map(function (mov) {
-//   return mov * eurToUsd;
-// });
-
 const movementsUSD = movements.map(mov => mov * eurToUsd);
 
 const movementsDescriptions = movements.map(
@@ -204,3 +206,8 @@ const movementsDescriptions = movements.map(
 
 // Filter Method
 const deposits = movements.filter(mov => mov > 0);
+
+// Reduce Mathod
+const balance = movements.reduce((acc, cur, i, arr) => acc + cur);
+
+const max = movements.reduce((acc, cur) => (acc > cur ? acc : cur));
