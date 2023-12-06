@@ -237,3 +237,8 @@ const totalDepositsInUSD = movements
   .filter(mov => mov > 0)
   .map(mov => mov * eurToUsd)
   .reduce((acc, mov) => acc + mov);
+
+// Find Method
+console.log(movements.find(mov => mov < 0));
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
