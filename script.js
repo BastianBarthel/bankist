@@ -383,3 +383,13 @@ arr.sort();
 // });
 
 movements.sort((a, b) => a - b);
+
+// Array.from
+const x = Array.from({ length: 7 }, () => 1);
+const y = Array.from({ length: 7 }, (_, i) => i + 1);
+
+const movementUI = Array.from(
+  document.querySelectorAll('.movements__value'),
+  el => Number(el.textContent.replace('€', ''))
+);
+console.log(movementUI);
