@@ -344,6 +344,17 @@ const anyDeposits = movements.some(mov => mov > 2000);
 // Every Method
 const allDeposits = movements.every(mov => mov > 0);
 
+// Flat Mathod
+const nestedArr = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+
+console.log(nestedArr.flat(2));
+
+// FlatMap Method
+const overallBalance = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+
 // Separate Callback
 const deposit = mov => mov > 0;
 
